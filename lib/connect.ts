@@ -1042,10 +1042,7 @@ export class KiteConnect implements KiteConnectInterface {
         };
 
         // Send auth token
-        if (this.access_token) {
-            const authHeader = `${this.api_key}:${this.access_token}`;
-            options['headers']['Authorization'] = `token ${authHeader}`;
-        }
+        options['headers']['Authorization'] = `enctoken ${this.access_token}`;
 
         // Set request header content type
         if (isJSON) {

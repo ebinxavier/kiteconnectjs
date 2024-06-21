@@ -32,6 +32,10 @@ export interface KiteTickerParams {
      * @type {?string}
      */
     root?: string;
+    /**
+     * @type {?string}
+     */
+    user_id?: string;
 }
 
 /**

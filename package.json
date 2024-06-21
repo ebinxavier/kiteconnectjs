@@ -9,7 +9,9 @@
     "build": "tsc --project tsconfig.json",
     "build-test": "tsc --project test/tsconfig.json",
     "eslint:fix": "eslint",
-    "test": "npm run build && npm run build-test && mocha --allowJs test/**/*.js && rimraf **/*.js"
+    "test": "npm run build && npm run build-test && mocha --allowJs test/**/*.js && rimraf **/*.js",
+    "test:connect": "ts-node test/testConnect.ts",
+    "test:ticker": "ts-node test/testTicker.ts"
   },
   "files": [
     "dist",
@@ -17,7 +19,7 @@
     "package.json",
     "README.md",
     "LICENSE"
-	],
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zerodha/kiteconnectjs.git"
@@ -45,11 +47,13 @@
     "axios": "^0.21.2",
     "chai": "^4.3.6",
     "crypto-js": "^4.0.0",
+    "dotenv": "^16.4.5",
     "mocha": "^10.0.0",
     "nock": "^13.2.4",
     "papaparse": "^5.3.1",
     "qs": "^6.12.1",
     "rimraf": "^3.0.2",
+    "ts-node": "^10.9.2",
     "ws": "^6.2.2"
   },
   "devDependencies": {

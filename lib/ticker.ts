@@ -310,6 +310,10 @@ export class KiteTicker implements KiteTickerInterface {
 	 * @type {string}
 	 */
 	root: string;
+	/**
+	 * @type {string}
+	 */
+	user_id: string;
 
 	/**
 	 * Creates an instance of KiteTicker.
@@ -321,6 +325,7 @@ export class KiteTicker implements KiteTickerInterface {
 		this.root = params.root || 'wss://ws.kite.trade/';
 		this.api_key = params.api_key
 		this.access_token = params.access_token
+		this.user_id = params.user_id || "";
 		this.modeFull = modeFull;
 		this.modeQuote = modeQuote;
 		this.modeLTP = modeLTP;
@@ -358,7 +363,7 @@ export class KiteTicker implements KiteTickerInterface {
 		// Skip if its already connected
 		if (ws && (ws.readyState === ws.CONNECTING || ws.readyState === ws.OPEN)) return;
 
-		const url = this.root + '?api_key=' + this.api_key +
+		const url = this.root + '?api_key=' + "kitefront" + "&user_id=" + this.user_id +
 			'&access_token=' + this.access_token + '&uid=' + (new Date().getTime().toString());
 
 		ws = new WebSocket(url, {
