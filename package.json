@@ -11,7 +11,8 @@
     "eslint:fix": "eslint",
     "test": "npm run build && npm run build-test && mocha --allowJs test/**/*.js && rimraf **/*.js",
     "test:connect": "ts-node test/testConnect.ts",
-    "test:ticker": "ts-node test/testTicker.ts"
+    "test:ticker": "ts-node test/testTicker.ts",
+    "dev": "ts-node src/index.ts"
   },
   "files": [
     "dist",
